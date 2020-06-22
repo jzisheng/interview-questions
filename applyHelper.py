@@ -1,8 +1,12 @@
 '''
 Tree Job Application Applier
-You have a list of recruiters you need to contact. Each recruiter has one and only one parent node. All directly linked recruiters keep tabs on each other and will discard your application if you apply to both of them. Each recruiter has an associated number of positions.
+You have a list of recruiters you need to contact. Each recruiter has
+ one and only one parent node. All directly linked recruiters keep tabs
+ on each other and will discard your application if you apply to both of them.
+ Each recruiter has an associated number of positions.
 
-Determine maximum number positions you can get your application sent to, without having application discarded
+Determine maximum number positions you can get your application sent to,
+ without having application discarded
 
     [3]
     / \
