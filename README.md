@@ -1,5 +1,5 @@
 # Interview Questions
 
-Here is a repository of interview questions I have come across that I couldn't easily find solutions to online. Hope this helps someone!
+Here is a repo of coding questions that either I have not seen solutions for online, or my own implementation. These are all coded in Python.
 
 
