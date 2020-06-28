@@ -1,22 +1,8 @@
 '''
-94. Binary Tree Inorder Traversal
-Medium
+Binary Tree Traversals Iterative
 
-Given a binary tree, return the inorder traversal of its nodes' values.
-
-Example:
-
-Input: [1,null,2,3]
-   1
-    \
-     2
-    /
-   3
-
-Output: [1,3,2]
-
-Follow up: Recursive solution is trivial, could you do it iteratively?
 '''
+
 from collections import *
 
 class TreeNode:
@@ -40,36 +26,41 @@ class Solution:
             curr = curr.right
         return result
     
-    def postOrder(self, root):
+    def postorderTraversal(self, root):
         result, stack = [], []
-        # stack add val, left, right
+        # stack add left, right, val
+        if not(root): return []        
         stack.append(root)
         while stack:
             curr = stack.pop()
             result.append(curr.val)
             if curr.left:
-                stack.append(curr.left)
+                stack.append(curr.left)            
             if curr.right:
-                stack.append(curr.right)                
-        return result
+                stack.append(curr.right)
+            pass
+        
+        return result[::-1]
 
-    def preOrder(self,root):
+    def preorderTraversal(self,root):        
         result, stack = [], []
         # stack add val, left, right
         stack.append(root)
         while stack:
             curr = stack.pop()
             result.append(curr.val)
+            if curr.right:
+                stack.append(curr.right)
             if curr.left:
                 stack.append(curr.left)
-            if curr.right:
-                stack.append(curr.right)                
         return result
         
-            
-'''
-a = TreeNode(10,left=TreeNode(5),right=TreeNode(15))
+a = TreeNode(10, \
+             left=TreeNode(5,left=TreeNode(1),right=TreeNode(11)), \
+             right=TreeNode(15))
 s = Solution()
 print("")
-print(s.postOrder(a))
-'''
+# 10 1 5 15
+# 10 1 5 15
+print(s.preorderTraversal(a))
+
