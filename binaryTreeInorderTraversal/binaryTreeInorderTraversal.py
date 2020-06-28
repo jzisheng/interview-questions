@@ -39,9 +39,37 @@ class Solution:
             result.append(curr.val)
             curr = curr.right
         return result
-            
+    
+    def postOrder(self, root):
+        result, stack = [], []
+        # stack add val, left, right
+        stack.append(root)
+        while stack:
+            curr = stack.pop()
+            result.append(curr.val)
+            if curr.left:
+                stack.append(curr.left)
+            if curr.right:
+                stack.append(curr.right)                
+        return result
 
+    def preOrder(self,root):
+        result, stack = [], []
+        # stack add val, left, right
+        stack.append(root)
+        while stack:
+            curr = stack.pop()
+            result.append(curr.val)
+            if curr.left:
+                stack.append(curr.left)
+            if curr.right:
+                stack.append(curr.right)                
+        return result
+        
+            
+'''
 a = TreeNode(10,left=TreeNode(5),right=TreeNode(15))
 s = Solution()
 print("")
-print(s.inorderTraversal(a))
+print(s.postOrder(a))
+'''
