@@ -3,11 +3,11 @@ Check whether the original sequence org can be uniquely reconstructed from the s
 '''
 import collections
 class Solution:
-
     def makeGraph(self,org,seqs):
         self.graph = collections.defaultdict(list)
         self.numParents = collections.defaultdict(int)
         self.nodes = set()
+        
         for seq in seqs:
             self.nodes = self.nodes.union(set(seq))
             for i in range(1,len(seq)):
@@ -18,41 +18,40 @@ class Solution:
     
     def sequenceReconstruction(self, org, seqs):
         self.makeGraph(org,seqs)
-        exploreNodes,res = [],[]        
+        exploreNodes = []
+        stack = []
         # explore nodes with no parents
-        for node in org:
+        for node in self.nodes:
             if self.numParents[node] == 0:
-                exploreNodes.append(node)
+                stack.append(node)
             pass
-        for node in exploreNodes:
-            self.dfs(node)
-        
-    def dfs(self,node):
-        pass
-    pass
-
-
-
+        res = []
+        while stack:
+            if len(stack) != 1:
+                return False
+            node = stack.pop(0)
+            res.append(node)
+            for nei in self.graph[node]:
+                self.numParents[nei] -= 1
+                if self.numParents[nei] == 0:
+                    stack.append(nei)
+            pass
+        return len(res) == len(self.nodes) and res == org
+            
 print("")
 s = Solution()
-
-# False
-org = [1,2,3]
-seqs = [[1,3],[1,2]]
-
+org,seqs = [1,2,3], [[1,2],[1,3],[2,3]] # true
 print(s.sequenceReconstruction(org,seqs))
 
 '''
-org = [4,1,5,2,6,3]
-seqs = [[5,2,6,3],[4,1,5,2]]
-
-
-org, seqs = [1], [[],[]]
-
-
-# False
-org = [1,2,3]
-seqs = [[2,3]]
+org,seqs = [1,2,3],[[1,2],[1,3],[2,3]] # True
+org,seqs = [4,1,5,2,6,3], [[5,2,6,3],[4,1,5,2]] # True
+org, seqs = [1], [[],[]] # False
+org,seqs = [1,2], [[1,2],[2,1]] # false
+org,seqs = [1,2], [[1,2],[2,1]] # false
+org,seqs = [1,2,3], [[1,2],[1,3],[2,3]] # true
+org,seqs = [1,2,3], [[1,2],[1,3],[2,3]] # true
+org, seqs = [1,2,3], [[2,3]] # False
 
 '''
 # false
