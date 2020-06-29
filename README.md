@@ -6,6 +6,7 @@ Here is a repo of coding questions that either I have not seen solutions for onl
 Categories of problems solved:
 
 * depth first search
+* breadth first search
 * dynamic programming
 * array (1d and 2d)
 
