@@ -1,3 +1,11 @@
+
+'''
+Solution:
+Calculate max left, and max right,
+then depending on the height of the tree
+calculate volume of water that can be stored
+
+'''
 import collections
 class Solution:  
     def trap(self, height):
