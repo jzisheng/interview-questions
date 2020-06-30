@@ -1,13 +1,27 @@
 import collections
+
 class Solution:
     def buildGraph(self,equations,values):
         for idx,(a,b) in enumerate(equations):
-            self.vals[a] = values[idx]
-            
-        for a,b in equations:
+            self.vals[a] = values[idx]            
             self.graph[a].append((b,self.vals[a]))
             self.graph[b].append((a,1/self.vals[a]))            
             pass
+
+
+    def dfs(self,start,end,product):
+        if start in self.visited:
+            return False
+        if start == end and end in self.graph:
+            self.result.append(product)
+            return True
+        self.visited.add(start)
+        for nei,val in self.graph[start]:
+            if self.dfs(nei,end,product*val):
+                return True
+        self.visited.remove(start)
+        return False
+    pass
         
     def calcEquation(self,equations,values,queries):
         self.graph = collections.defaultdict(list)
@@ -15,31 +29,12 @@ class Solution:
         # first build the graph
         self.buildGraph(equations,values)
         # then explore the query
-        ans = [-1]*len(queries)
-
+        self.result = []
         for idx,(qa, qb) in enumerate(queries):
-            self.visiting = set()
-            if qa in self.graph:
-                ans[idx] = float(self.dfs(qa,qb,1))
-            else:
-                ans[idx] = float(-1)
-        return ans
+            self.visited = set()            
+            if  not(self.dfs(qa,qb,1)): self.result.append(-1)
+        return self.result
         pass
-
-    def dfs(self,start,end,product):
-        if start in self.visiting:
-            return -1
-        self.visiting.add(start)
-        if start == end:
-            return product
-        ans = -1
-        for nei,val in self.graph[start]:
-            res = self.dfs(nei,end,product*val)
-            if res != -1:
-                ans = res
-            pass
-        return ans
-    pass
 
 equations = [ ["a", "b"], ["b", "c"] ]
 values = [2.0, 3.0]
