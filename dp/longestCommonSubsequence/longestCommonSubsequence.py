@@ -19,8 +19,7 @@ class Solution():
                         self.lcs(text1,text2,m,n-1) )
             self.memo[(a,b)] = res
         return self.memo[(a,b)] 
-
-    
+    pass
 
 s = Solution()
 print(s.longestCommonSubsequence("abcde","ace"))
