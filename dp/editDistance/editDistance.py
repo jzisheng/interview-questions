@@ -47,9 +47,31 @@ class Solution:
                 return min(insertion,replace,delete)
             pass
         return dp(word1,word2,0,0)
+
     # Levenhstein distance
+    def levMinDistance(self,word1,word2):
+        rs,cs = len(word1),len(word2)
+        matrix = [[0]*(cs) for i in range(rs)]
+        for r in range(rs):
+            for c in range(cs):
+                if min(r,c) == 0:
+                    matrix[r][c] = max(r,c)+1
+                else: 
+                    insert = matrix[r-1][c]+1
+                    delete = matrix[r][c-1]+1
+                    if (word1[r] != word2[c]):
+                        replace = matrix[r-1][c-1]+1
+                    else:
+                        replace = matrix[r-1][c-1]
+                    matrix[r][c] = min(insert,replace,delete)
+
+            pass
+        for r in matrix:
+            print(r)
+        return matrix[rs-1][cs-1]
     pass
 
 s = Solution()
-print(s.minDistance("abd","cba"))
+print("")
+print(s.levMinDistance("cat","cap"))
 
