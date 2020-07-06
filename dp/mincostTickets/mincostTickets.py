@@ -1,5 +1,5 @@
+# 'coin change' problem
 class Solution:
-    
     def mincostTickets(self,days,costs):
         memo = {}
         if not days: return 0
