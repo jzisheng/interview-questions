@@ -1,3 +1,6 @@
+import collections
+
+
 class Solution:
     def coinChange(self, coins, amount):
         dp = [float('inf')]*(amount+1)
@@ -12,8 +15,10 @@ class Solution:
         else:
             return -1
     pass
+
 s = Solution()
 
 coins = [1,2,5]
 amount = 11
 print(s.coinChange(coins,amount))
+coins
