@@ -3,9 +3,9 @@ class Solution:
     def jobScheduling(self,startTime,endTime,profit):
         n = len(startTime)
         jobs = sorted(zip(startTime, endTime, profit),\
-                      key=lambda v: v[1])
+                              key=lambda v: v[1])
         dp = [0] * (n+1)
-
+        print(jobs)
         for i, job in enumerate(jobs):
             s1, e1, p1 = job[0], job[1], job[2]
             dp[i+1] = p1
