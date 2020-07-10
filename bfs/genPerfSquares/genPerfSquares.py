@@ -1,39 +1,19 @@
-def genPerfSquares(n):
-    result = []
-    for i in range(1, n//2):
-        if i*i > n:
-            break
-        result.append(i*i)
-    return result[::-1]
-
+import math
 
 def numSquares(n):
-    if n < 0:
-        return 0
-    elif n == 1:
-        return 1
-    
-    result = float('inf')
-    
-    def bfs(curr, count, squares):
-        nonlocal result
-        if curr < 0:
-            return
-        elif curr == 0:
-            result = min(result, count)
-            return
-        else:
-            for s in squares:
-                bfs(curr-s, count+1, squares)
-                if curr-s > 0:
-                    break
-            pass
-        pass
-    
-    squares = (genPerfSquares(n))
-    bfs(n, 0, squares)
-    return result
-    pass
+    squareNums = [i**2 for i in range(0, int(math.sqrt(n))+1)]
+    dp = [float('inf')]*(n+1)
 
+    dp[0] = 0
+    dp[1] = 1
+    for i in range(1, n+1):
+        for j in range(1, int(math.sqrt(i))+1):
+            square = j*j
+            dp[i] = min(dp[i], dp[i-square]+1)
+    return dp[n]
 
-print(numSquares(12))
+# 12-4 0
+# 8-4 1
+# 4-4 2
+# 0 1==count
+print(numSquares(3))
