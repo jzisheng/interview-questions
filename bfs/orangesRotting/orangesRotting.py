@@ -14,7 +14,7 @@ def orangesRotting(grid):
     
     for r in range(rs):
         for c in range(cs):
-            if grid[r][c] == 2 and len(stack) < 1:
+            if grid[r][c] == 2:
                 stack.append(((r, c), 0))
         pass
 
@@ -24,7 +24,7 @@ def orangesRotting(grid):
         maxDist = max(maxDist, d)
         for nr, nc in posGenerator(r, c):
             if grid[nr][nc] == 1:
-                stack.append(( (nr, nc), d+1))
+                stack.append(((nr, nc), d+1))
                 grid[nr][nc] = 2
 
     for r in range(rs):
@@ -37,5 +37,6 @@ def orangesRotting(grid):
 
 grid = [[2,1,1],[0,1,1],[1,0,1]]
 grid = [[2,1,1],[1,1,0],[0,1,1]]
+grid = [[2,2,2,1,1,0,2]]
 print(orangesRotting(grid))
 

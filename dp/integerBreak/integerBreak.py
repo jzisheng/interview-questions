@@ -27,14 +27,13 @@ dp[3]
 3-1
 2
 '''
-class Solution():
-    def integerBreak(self,n):
+class Solution:
+    def integerBreak(self, n: int) -> int:
         dp = [0]*(n+1)
         for i in range(1,n+1):
             for j in range(1,i):
-                dp[i] = max( dp[i],(i-j)*j,(i-j)*dp[j] )
+                dp[i] = max(dp[i],(i-j)*j,(i-j)*dp[j])
         return dp[n]
-    
     pass
 
 s = Solution()
