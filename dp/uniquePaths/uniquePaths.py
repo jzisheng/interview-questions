@@ -22,4 +22,3 @@ class Solution:
 
 s = Solution()
 s.uniquePaths(7, 3)
-        
