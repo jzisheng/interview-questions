@@ -1,5 +1,4 @@
 import collections
-import heapq
 
 
 class Solution():
@@ -9,18 +8,14 @@ class Solution():
             self.graph[a].append(b)
         for a in self.graph:
             self.graph[a].sort()
-        
         self.result = []
         self.dfs("JFK")
         return self.result[::-1]
-
+        
     def dfs(self, node):
-        destlist = self.graph[node]
-        while destlist:
-            nei = destlist.pop(0)
-            self.dfs(nei)
+        while self.graph[node]:
+            self.dfs(self.graph[node].pop())
         self.result.append(node)
-        return
     pass
 
 
