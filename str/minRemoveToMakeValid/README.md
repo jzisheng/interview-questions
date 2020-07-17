@@ -28,6 +28,3 @@ Example 4:
 
 Input: s = "(a(b(c)d)"
 Output: "a(b(c)d)"
-
-
-a)b(c)d
