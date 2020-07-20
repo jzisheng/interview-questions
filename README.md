@@ -32,7 +32,7 @@ Categories of problems solved:
   * Oranges rotting
   * Word Ladder
 
-* dynamic programming
+* Dynamic Programming
   * [Integer Break](https://www.youtube.com/watch?v=m0OFK5LeEyw)
   * Burst Balloons
   * Climb stairs
@@ -54,6 +54,8 @@ Categories of problems solved:
   * Num Squares
   * Trap rain water
   * Unique Paths
-  
-* array (1d and 2d)
 
+* Linked Lists
+  * Flatten
+  * Merge two lists
+  * Merge K Lists
