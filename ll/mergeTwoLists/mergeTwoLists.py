@@ -7,22 +7,16 @@ class ListNode:
 
 class Solution():
     def mergeTwoLists(self, l1, l2):
-        a, b = l1, l2
-        while a and b:
-            if a.val > b.val:
-                temp = b.next
-                b.next = a
-                b = temp
-            else:
-                temp = a.next
-                a.next = b
-                a = temp
-        
-        if l1.val < l2.val:
+        if l1 == None:
+            return l2
+        elif l2 == None:
             return l1
-        return l2
-        pass
-
+        elif l1.val < l2.val:
+            l1.next = self.mergeTwoLists(l1.next, l2)
+            return l1
+        else:
+            l2.next = self.mergeTwoLists(l1, l2.next)
+            return l2
 
 
 a = ListNode(1, ListNode(4, ListNode(6)))
