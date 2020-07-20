@@ -5,9 +5,55 @@ Here is a repo of coding questions that either I have not seen solutions for onl
 
 Categories of problems solved:
 
-* depth first search
-* breadth first search
+* Array
+  * 3 Sum
+  * Degree of array
+  * Drone flight planner
+  * Find duplicate
+  * Smallest max
+  * Subarray sum
+  * Trapping rain water
+
+* Depth First Search
+  * Apply Helper
+  * Boggle Board
+  * Evaluate Division
+  * Find Itinerary
+  * Letter combinations Phone
+  * People Hazards
+  * Restore IP Addresses
+  * Sequence Reconstruction
+
+* Breadth First Search
+  * Find the city
+  * Find words
+  * Generate perfect squares
+  * Number trees
+  * Oranges rotting
+  * Word Ladder
+
 * dynamic programming
-  * [Integer Break 🎦](https://www.youtube.com/watch?v=m0OFK5LeEyw)
+  * [Integer Break](https://www.youtube.com/watch?v=m0OFK5LeEyw)
+  * Burst Balloons
+  * Climb stairs
+  * Coin change
+  * Delete operation for two strings
+  * Divisor game
+  * Edit distance
+  * House robber
+  * Integer Break
+  * Integer Replacement
+  * Job scheduling
+  * Length of LIS
+  * Longest common subsequence
+  * longestIncreasingPath
+  * Min distance
+  * Min insertions
+  * Min sum stairs with hops
+  * Min cost tix
+  * Num Squares
+  * Trap rain water
+  * Unique Paths
+  
 * array (1d and 2d)
 
