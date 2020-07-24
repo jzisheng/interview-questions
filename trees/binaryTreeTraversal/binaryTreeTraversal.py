@@ -10,7 +10,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-    pass
+    pass 
 
 class Solution:
     def inorderTraversal(self, root):

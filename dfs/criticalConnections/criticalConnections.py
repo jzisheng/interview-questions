@@ -9,7 +9,7 @@ class Solution:
         self.low[node] = dist
         for nei in self.graph[node]:
             if nei != parent:
-                if not self.low[nei]:
+                if self.low[nei] == 0:
                     self.dfs(nei, node, dist+1)
                 if self.low[nei] <= dist:
                     self.low[node] = min(self.low[node], self.low[nei])
@@ -21,7 +21,7 @@ class Solution:
         self.low = [0]*n
         self.res = []
         self.graph = defaultdict(list)
-
+        
         for a, b in connections:
             self.graph[a].append(b)
             self.graph[b].append(a)
