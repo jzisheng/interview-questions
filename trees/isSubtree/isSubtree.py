@@ -25,7 +25,7 @@ class Solution:
         pass
     
     def isSubtree(self, s, t):
-        return self.traverse(s,t)
+        return self.traverse(s, t)
         pass
 
 
