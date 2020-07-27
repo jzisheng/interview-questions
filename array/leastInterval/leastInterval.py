@@ -25,6 +25,6 @@ class Solution:
 
 s = Solution()
 
-tasks = ["A","A","A","B","B","B"]
+tasks = ["A", "A", "A", "B", "B", "B"]
 n = 2
 s.leastInterval(tasks, n)
