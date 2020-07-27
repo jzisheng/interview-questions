@@ -1,8 +1,10 @@
 '''
--2 0 1 3
-   ^  
-     ^ 
-       ^
+targetTwoSum = 2 - (-2)
+              target-nums[i]
+  -2 0 1 3
+i  ^
+l    ^
+r        ^
 
 '''
 
@@ -11,19 +13,21 @@ class Solution():
         res = 0
         r = len(nums)-1
         while l < r:
-            if (nums[l]+nums[r]) < target:
+            if nums[l] + nums[r] < target:
                 res += r-l
                 l += 1
             else:
                 r -= 1
+            pass
         return res
     
     def threeSumSmaller(self, nums, target):
         nums.sort()
-        result = 0
+        res = 0
         for i in range(0, len(nums)-2):
-            result += self.twoSumSmaller(i+1, nums, target-nums[i])
-        return result
+            res += self.twoSumSmaller(i+1, nums, target-nums[i])
+        return res
+        pass
     
 s = Solution()
 nums = [-2, 0, 1, 3]
