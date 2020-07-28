@@ -33,7 +33,7 @@ Categories of problems solved:
   * Word Ladder
 
 * Dynamic Programming
-  * [Integer Break](https://www.youtube.com/watch?v=m0OFK5LeEyw)
+  * [Integer Break 🎦](https://www.youtube.com/watch?v=m0OFK5LeEyw)
   * Burst Balloons
   * Climb stairs
   * Coin change
