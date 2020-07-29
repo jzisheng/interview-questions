@@ -14,7 +14,7 @@ Here is a repo of coding questions that either I have not seen solutions for onl
   * Smallest max
   * Subarray sum
   * Trapping rain water
-  * [Task Scheduler 🎦](https://youtu.be/oN9Kv8CDVzw)
+  * [Task Scheduler 🎦](https://youtu.be/QNQ6EIncxyw)
 
 * Depth First Search
   * Apply Helper
