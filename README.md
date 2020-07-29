@@ -1,9 +1,10 @@
-# Interview Questions
+# Interview Questions 💻
 
-Here is a repo of coding questions that either I have not seen solutions for online, or my own implementation. These are all coded in Python. I'll be uploading videos. I'm following [this guide](https://docs.google.com/document/d/1wUCqhVHydWiDk6FJdFLSMpgigNrGcs4OFZg0Wa7JGEw/edit) which organized leetcode problems by their fundamentals. I'm hoping to be able to explain foundations first, and then with that the problems will become clear to solve!
+Here is a repo of coding questions that either I have not seen solutions for online, or my own implementation. These are all coded in Python. I'll be uploading videos. I'm following [this guide](https://docs.google.com/document/d/1wUCqhVHydWiDk6FJdFLSMpgigNrGcs4OFZg0Wa7JGEw/edit) which organized leetcode problems by their fundamentals. I'm hoping to be able to explain foundations first, and then with that the problems will become clear to solve! Problems with video solutions are hyperlinked.
 
+---
 
-Categories of problems solved:
+### Problems solved:
 
 * Array
   * 3 Sum
