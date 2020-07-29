@@ -13,6 +13,7 @@ Categories of problems solved:
   * Smallest max
   * Subarray sum
   * Trapping rain water
+  * [Task Scheduler 🎦](https://youtu.be/oN9Kv8CDVzw)
 
 * Depth First Search
   * Apply Helper
