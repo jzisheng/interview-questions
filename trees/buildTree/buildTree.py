@@ -7,21 +7,30 @@ class TreeNode:
 
 class Solution:
     def buildTree(self, inorder, postorder):
-        def f(inL, inR):
-            if inL > inR:
+        def f(l, r):
+            if l > r or not postorder:
                 return None
             val = postorder.pop()
-            root = TreeNode(val)
             idx = idxMap[val]
-            root.right = f(idx+1, inR)
-            root.left = f(inL, idx-1)
-            return root
-            pass
-        idxMap = {val:idx for idx,val in enumerate(inorder)}
-        return f(0, len(postorder)-1)
+            
+            node = TreeNode(val)
+            
+            node.left = f(l, idx-1)
+            node.right = f(idx+1, r)
+            
+            return node
+        idxMap = {val:idx for idx, val in enumerate(inorder)}
+        return f( 0, len(inorder)-1 )
+    
+    def traverse(self, node):
+        if node == None: return
+        self.traverse(node.left)
+        print("{}".format(node.val) )
+        self.traverse(node.right)       
 
 s = Solution()
 
 inorder = [9,3,15,20,7]
 postorder = [9,15,7,20,3]
-node = s.buildTree(inorder, postorder)
+res = s.buildTree(inorder, postorder)
+s.traverse(res)
