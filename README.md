@@ -11,7 +11,7 @@ Here is a repo of coding questions that either I have not seen solutions for onl
   * Degree of array
   * Drone flight planner
   * Find duplicate
-  * [Find the duplicate number](https://www.youtube.com/watch?v=OM7yWsiRVGI)
+  * [Find the duplicate number 🎦](https://www.youtube.com/watch?v=OM7yWsiRVGI)
   * Smallest max
   * Subarray sum
   * Trapping rain water
