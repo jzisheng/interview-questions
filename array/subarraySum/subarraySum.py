@@ -1,17 +1,18 @@
+
+
+from collections import defaultdict
 class Solution:
     def subarraySum(self, nums, k):
-        cums = set()
-        cumsum = 0
-        res = 0
+        count, sums = 0,0
+        d = defaultdict(int)
+        d[0] = 1
         for n in nums:
-            cumsum+=n
-            cums.add(cumsum)
-            if cumsum == k or cumsum-k in cums:
-                res += 1
-        return res
-        pass
-
+            sums += n
+            if (sums-k) in d:
+                count += d[(sums-k)]
+            d[sums] += 1
+        return count
 
 s = Solution()
-nums = [1,1,1]
-s.subarraySum(nums,2)
+print(s.subarraySum([1,1,1],2))
+            
