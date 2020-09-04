@@ -1,27 +1,28 @@
 '''
-"abcabcabcabc"
-            ^
+0 0 0 0 1 2 3
+a b c a a b c
+          i
+      j
+
 '''
 
 class Solution:
     def repeatedSubstringPattern(self, s):
-        valid = False
-        for w in range(1,(len(s)//2)+1):
-            prev = None
-            for i in range(0,len(s),w):
-                ss = s[i:i+w]
-                if prev == None:
-                    prev = ss
-                elif ss != prev:
-                    valid = False
-                    break
-                else:
-                    valid = True
-            if valid and (i+w) == len(s):
-                return True
-        return False
+        n = len(s)
+        dp = [0]*n
+        for i in range(1,n):
+            j = dp[i-1]
+            while j > 0 and s[i] != s[j]:
+                j = dp[j-1]
+            if s[i] == s[j]:
+                j += 1
+            dp[i] = j
+        print(dp)
+        sl = dp[n-1]
+        return dp[n-1] != 0 and n%(n-sl)==0
 
-pass
-s = "abcabcab"
+
+s = "babaab"
+s = "aabaabaa"
 sol = Solution()
 print(sol.repeatedSubstringPattern(s))
