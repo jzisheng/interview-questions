@@ -28,6 +28,7 @@ Here is a repo of coding questions that either I have not seen solutions for onl
   * Sequence Reconstruction
 
 * Breadth First Search
+  * [Vertical Order Traversal 🎦](https://www.youtube.com/watch?v=3Wvl6_2oReY&t=4s)
   * Find the city
   * Find words
   * Generate perfect squares
