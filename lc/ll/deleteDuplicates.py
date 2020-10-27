@@ -56,7 +56,7 @@ def deleteDuplicates(head):
         nxt = None if i+1 >= len(res) else res[i+1]
         res[i].next = nxt
 
-    return res[0]
+    return None if not res else res[0]
     
 
 def printNodes(head):
@@ -69,6 +69,7 @@ def printNodes(head):
 
 head = ListNode(3,ListNode(3,ListNode(4,ListNode(4,ListNode(5)))))
 head = ListNode(1,ListNode(2,ListNode(3,ListNode(3,ListNode(4,ListNode(4,ListNode(5)))))))
+head = ListNode(1,ListNode(1))
 
 
 head = deleteDuplicates(head)
